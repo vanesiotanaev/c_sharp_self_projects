@@ -39,5 +39,22 @@ void MinMaxSortMethod(int[] array)
     Console.WriteLine();
 }
 
+void GlassSortMethod(int[] array)
+{
+    for (int i = 0; i < array.Length - 1; i++)
+    {
+        if (array [i] < array [i+1])
+        {
+            int temp  = array[i];
+            array[i] = array [i+1];
+            array[i+1] = temp;
+        }
+    }
+    string sortedarray = string.Join(" ", array);
+    Console.WriteLine($"Отсортированный массив (метод Glass): {sortedarray}");
+    Console.WriteLine();
+}
+
 int[] userarray = UserArrayMethod();
 MinMaxSortMethod(userarray);
+GlassSortMethod(userarray);
